@@ -14,7 +14,10 @@ const app = express();
 /* -------------------------------------------------------------------------- */
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",
+    "https://ai-resume-frontend-35jw.onrender.com",
+  ],
   credentials: true,
 };
 
