@@ -1,0 +1,6 @@
+spacy
+pdfplumber
+python-docx
+fastapi
+uvicorn
+pymupdf
