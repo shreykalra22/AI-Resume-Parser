@@ -1,14 +1,25 @@
-// frontend/src/api/axiosConfig.js
-// Single axios instance pointing at the deployed FastAPI backend.
-// All components import from here — never hardcode URLs elsewhere.
-
 import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+const BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  "https://ai-resume-parser-api-shrey.onrender.com";
 
-const instance = axios.create({
+const axiosInstance = axios.create({
   baseURL: BASE_URL,
-  timeout: 60000,  // parser can take time on cold Render starts
+  timeout: 60000,
 });
 
-export default instance;
+axiosInstance.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
+
+export default axiosInstance;
