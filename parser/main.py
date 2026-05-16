@@ -40,10 +40,9 @@ MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024
 # Add your Render frontend URL here. The wildcard alone is fine for public APIs,
 # but listing origins explicitly is required when allow_credentials=True.
 ALLOWED_ORIGINS: List[str] = [
-    "http://localhost:5173",                               # Vite local dev
-    "http://localhost:3000",                               # CRA local dev
-    "https://ai-resume-frontend-35jw.onrender.com",        # your Render frontend
-    # Add any other origins (Vercel, Netlify, custom domain) here
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://ai-resume-frontend-35jw.onrender.com",
 ]
 
 
