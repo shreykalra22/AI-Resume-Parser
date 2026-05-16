@@ -498,7 +498,7 @@ export default function ResumeDetail() {
 
             <Document
               file={{
-                url: `http://localhost:5000/${resume.filePath}`,
+                url: `https://ai-resume-backend-lu0j.onrender.com/${resume.filePath}`,
               }}
               loading={
                 <div className="text-black">
