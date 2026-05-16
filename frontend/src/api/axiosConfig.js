@@ -1,25 +1,9 @@
 import axios from "axios";
 
-const BASE_URL =
-  import.meta.env.VITE_API_URL ||
-  "https://ai-resume-parser-api-shrey.onrender.com";
-
-const axiosInstance = axios.create({
-  baseURL: BASE_URL,
+const API = axios.create({
+  baseURL: "https://ai-resume-parser-api-shrey.onrender.com",
   timeout: 60000,
+  withCredentials: true,
 });
 
-axiosInstance.interceptors.request.use(
-  (config) => {
-    const token = localStorage.getItem("token");
-
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
-
-    return config;
-  },
-  (error) => Promise.reject(error)
-);
-
-export default axiosInstance;
+export default API;
