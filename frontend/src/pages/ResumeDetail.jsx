@@ -498,7 +498,7 @@ export default function ResumeDetail() {
 
             <Document
               file={{
-                url: `https://ai-resume-backend-lu0j.onrender.com/${resume.filePath}`,
+              url: `https://ai-resume-parser-api-shrey.onrender.com/${resume.filePath}`
               }}
               loading={
                 <div className="text-black">

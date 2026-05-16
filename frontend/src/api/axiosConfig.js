@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://ai-resume-backend-lu0j.onrender.com/api",
+  baseURL: "https://ai-resume-parser-api-shrey.onrender.com"
 });
 
 axiosInstance.interceptors.request.use(
